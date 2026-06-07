@@ -124,7 +124,7 @@ app.put("/api/leads/:id/notes", (req, res) => {
   });
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 // Edit Lead
 app.put("/api/leads/:id/edit", (req, res) => {
   const id = Number(req.params.id);
