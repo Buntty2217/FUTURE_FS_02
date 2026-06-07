@@ -16,7 +16,7 @@ function App() {
 
   const fetchLeads = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/leads");
+      const res = await axios.get("https://future-fs-02-satk.onrender.com/api/leads");
       setLeads(res.data);
     } catch (error) {
       console.error(error);
@@ -27,7 +27,7 @@ function App() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/leads", {
+      await axios.post("https://future-fs-02-satk.onrender.com/api/leads", {
         name,
         email,
       });
@@ -43,7 +43,7 @@ function App() {
 
   const updateStatus = async (id, status) => {
     try {
-      await axios.put(`http://localhost:5000/api/leads/${id}`, {
+      await axios.put(`https://future-fs-02-satk.onrender.com/api/leads/${id}`, {
         status,
       });
 
@@ -62,7 +62,7 @@ const deleteLead = async (id) => {
 
   try {
     await axios.delete(
-      `http://localhost:5000/api/leads/${id}`
+      `https://future-fs-02-satk.onrender.com/api/leads/${id}`
     );
 
     fetchLeads();
@@ -145,7 +145,7 @@ const exportToCSV = () => {
 const updateNotes = async (id, notes) => {
   try {
     await axios.put(
-      `http://localhost:5000/api/leads/${id}/notes`,
+      `https://future-fs-02-satk.onrender.com/api/leads/${id}/notes`,
       { notes }
     );
 
@@ -170,7 +170,7 @@ const editLead = async (lead) => {
 
   try {
     await axios.put(
-      `http://localhost:5000/api/leads/${lead.id}/edit`,
+      `https://future-fs-02-satk.onrender.com/api/leads/${lead.id}/edit`,
       {
         name: newName,
         email: newEmail,
